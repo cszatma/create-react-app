@@ -33,9 +33,9 @@ function formatMessage(message, isError) {
 
   // Remove webpack-specific loader notation from filename.
   // Before:
-  // ./~/css-loader!./~/postcss-loader!./src/App.css
+  // ./~/css-loader!./~/postcss-loader!./src/App.scss
   // After:
-  // ./src/App.css
+  // ./src/App.scss
   if (lines[0].lastIndexOf('!') !== -1) {
     lines[0] = lines[0].substr(lines[0].lastIndexOf('!') + 1);
   }

@@ -8256,7 +8256,7 @@ module.exports = URL;
 /* unknown exports provided */
 /* all exports used */
 /*!*****************************************************************************************************************************************************************************!*\
-  !*** ./packages/react-scripts/~/css-loader?{"importLoaders":1}!./packages/react-scripts/~/postcss-loader?{"ident":"postcss"}!./packages/react-scripts/template/src/App.css ***!
+  !*** ./packages/react-scripts/~/css-loader?{"importLoaders":1}!./packages/react-scripts/~/postcss-loader?{"ident":"postcss"}!./packages/react-scripts/template/src/App.scss ***!
   \*****************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8275,7 +8275,7 @@ exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  -web
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************************************************************************************************************************************!*\
-  !*** ./packages/react-scripts/~/css-loader?{"importLoaders":1}!./packages/react-scripts/~/postcss-loader?{"ident":"postcss"}!./packages/react-scripts/template/src/index.css ***!
+  !*** ./packages/react-scripts/~/css-loader?{"importLoaders":1}!./packages/react-scripts/~/postcss-loader?{"ident":"postcss"}!./packages/react-scripts/template/src/index.scss ***!
   \*******************************************************************************************************************************************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17280,7 +17280,7 @@ var _App = __webpack_require__(/*! ./App */ 191);
 
 var _App2 = _interopRequireDefault(_App);
 
-__webpack_require__(/*! ./index.css */ 297);
+__webpack_require__(/*! ./index.scss */ 297);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -17332,9 +17332,9 @@ function formatMessage(message) {
 
   // Remove webpack-specific loader notation from filename.
   // Before:
-  // ./~/css-loader!./~/postcss-loader!./src/App.css
+  // ./~/css-loader!./~/postcss-loader!./src/App.scss
   // After:
-  // ./src/App.css
+  // ./src/App.scss
   if (lines[0].lastIndexOf('!') !== -1) {
     lines[0] = lines[0].substr(lines[0].lastIndexOf('!') + 1);
   }
@@ -26097,7 +26097,7 @@ var _logo = __webpack_require__(/*! ./logo.svg */ 206);
 
 var _logo2 = _interopRequireDefault(_logo);
 
-__webpack_require__(/*! ./App.css */ 296);
+__webpack_require__(/*! ./App.scss */ 296);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39892,14 +39892,14 @@ module.exports = traverseAllChildren;
 /* unknown exports provided */
 /* all exports used */
 /*!*****************************************************!*\
-  !*** ./packages/react-scripts/template/src/App.css ***!
+  !*** ./packages/react-scripts/template/src/App.scss ***!
   \*****************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.css */ 51);
+var content = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.scss */ 51);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../~/style-loader/addStyles.js */ 126)(content, {});
@@ -39908,8 +39908,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.css */ 51, function() {
-			var newContent = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.css */ 51);
+		module.hot.accept(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.scss */ 51, function() {
+			var newContent = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./App.scss */ 51);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -39923,14 +39923,14 @@ if(true) {
 /* unknown exports provided */
 /* all exports used */
 /*!*******************************************************!*\
-  !*** ./packages/react-scripts/template/src/index.css ***!
+  !*** ./packages/react-scripts/template/src/index.scss ***!
   \*******************************************************/
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.css */ 52);
+var content = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.scss */ 52);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
 var update = __webpack_require__(/*! ../../~/style-loader/addStyles.js */ 126)(content, {});
@@ -39939,8 +39939,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.css */ 52, function() {
-			var newContent = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.css */ 52);
+		module.hot.accept(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.scss */ 52, function() {
+			var newContent = __webpack_require__(/*! !../../~/css-loader??ref--5-1!../../~/postcss-loader??postcss!./index.scss */ 52);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
