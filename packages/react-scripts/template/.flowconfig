@@ -17,4 +17,10 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixedInNextDeploy
 suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError
 
+; Extensions
+module.file_ext=.css
+module.file_ext=.scss
+module.file_ext=.sass
+module.file_ext=.scss.module
+
 [strict]
