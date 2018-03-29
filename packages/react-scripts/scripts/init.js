@@ -42,6 +42,20 @@ module.exports = function(
     test: 'react-scripts test --env=jsdom',
     eject: 'react-scripts eject',
     flow: 'flow',
+    prettier: 'prettier --write "src/**/*.js"',
+  };
+
+  // Setup Prettier Rules
+  appPackage.prettier = {
+    parser: 'flow',
+    trailingComma: 'all',
+    singleQuote: true,
+    tabWidth: 4,
+  };
+
+  // Setup eslintConfig so errors will be shown in the IDE/editor
+  appPackage.eslintConfig = {
+    extends: 'react-app',
   };
 
   fs.writeFileSync(
