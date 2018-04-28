@@ -26,11 +26,8 @@ module.exports = function(
   originalDirectory,
   template
 ) {
-  const ownPackageName = require(path.join(
-    __dirname,
-    '..',
-    'package.json'
-  )).name;
+  const ownPackageName = require(path.join(__dirname, '..', 'package.json'))
+    .name;
   const ownPath = path.join(appPath, 'node_modules', ownPackageName);
   const appPackage = require(path.join(appPath, 'package.json'));
   const useYarn = fs.existsSync(path.join(appPath, 'yarn.lock'));
@@ -44,6 +41,16 @@ module.exports = function(
     build: 'react-scripts-ts build',
     test: 'react-scripts-ts test --env=jsdom',
     eject: 'react-scripts-ts eject',
+    lint: 'tslint -c ./tslint.json -p ./tsconfig.json --fix',
+    prettier: 'prettier --write "src/**/*.js"',
+  };
+
+  // Setup Prettier Rules
+  appPackage.prettier = {
+    parser: 'typescript',
+    trailingComma: 'all',
+    singleQuote: true,
+    tabWidth: 4,
   };
 
   fs.writeFileSync(
@@ -213,6 +220,8 @@ module.exports = function(
 function isReactInstalled(appPackage) {
   const dependencies = appPackage.dependencies || {};
 
-  return typeof dependencies.react !== 'undefined' &&
-    typeof dependencies['react-dom'] !== 'undefined';
+  return (
+    typeof dependencies.react !== 'undefined' &&
+    typeof dependencies['react-dom'] !== 'undefined'
+  );
 }
