@@ -42,7 +42,7 @@ module.exports = function(
     test: 'react-scripts-ts test --env=jsdom',
     eject: 'react-scripts-ts eject',
     lint: 'tslint -c ./tslint.json -p ./tsconfig.json --fix',
-    prettier: 'prettier --write "src/**/*.js"',
+    prettier: 'prettier --write "src/**/*.(js|jsx|ts|tsx)"',
   };
 
   // Setup Prettier Rules
