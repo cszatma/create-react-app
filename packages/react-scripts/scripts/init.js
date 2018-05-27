@@ -50,7 +50,7 @@ module.exports = function(
     parser: 'typescript',
     trailingComma: 'all',
     singleQuote: true,
-    tabWidth: 4,
+    tabWidth: 2,
   };
 
   fs.writeFileSync(
