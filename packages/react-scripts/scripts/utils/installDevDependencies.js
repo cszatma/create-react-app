@@ -1,3 +1,7 @@
+// @remove-file-on-eject
+
+'use strict';
+
 const spawn = require('react-dev-utils/crossSpawn');
 
 module.exports = (command, args, useTypescript) => {

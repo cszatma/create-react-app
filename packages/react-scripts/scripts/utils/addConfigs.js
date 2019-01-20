@@ -1,3 +1,7 @@
+// @remove-file-on-eject
+
+'use strict';
+
 module.exports = (appPackage, useTypescript) => {
   // Setup the prettier config
   appPackage.prettier = {
