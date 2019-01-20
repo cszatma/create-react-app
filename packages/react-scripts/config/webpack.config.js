@@ -44,6 +44,9 @@ const shouldInlineRuntimeChunk = process.env.INLINE_RUNTIME_CHUNK !== 'false';
 // Check if TypeScript is setup
 const useTypeScript = fs.existsSync(paths.appTsConfig);
 
+// Check if custom paths are defined
+const reactExtensions = fs.existsSync(paths.reactExtensions) ? require(paths.reactExtensions) : {};
+
 // style files regexes
 const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
@@ -275,6 +278,7 @@ module.exports = function(webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
+        ...(reactExtensions.paths || {})
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
