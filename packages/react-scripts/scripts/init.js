@@ -22,6 +22,8 @@ const spawn = require('react-dev-utils/crossSpawn');
 const { defaultBrowsers } = require('react-dev-utils/browsersHelper');
 const os = require('os');
 const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
+const addConfigs = require('./utils/addConfigs');
+const installDevDependencies = require('./utils/installDevDependencies');
 
 function isInGitRepository() {
   try {
@@ -99,12 +101,15 @@ module.exports = function(
     build: 'react-scripts build',
     test: 'react-scripts test',
     eject: 'react-scripts eject',
+    prettier: 'prettier --write "src/**/*.{js,jsx,ts,tsx,json,css,scss}'
   };
 
   // Setup the eslint config
   appPackage.eslintConfig = {
     extends: 'react-app',
   };
+
+  addConfigs(appPackage);
 
   // Setup the browsers list
   appPackage.browserslist = defaultBrowsers;
@@ -164,6 +169,11 @@ module.exports = function(
     command = 'npm';
     args = ['install', '--save', verbose && '--verbose'].filter(e => e);
   }
+
+  if (!installDevDependencies(command, args, useTypeScript)) {
+    return;
+  }
+
   args.push('react', 'react-dom');
 
   // Install additional template dependencies, if present
