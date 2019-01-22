@@ -91,6 +91,7 @@ module.exports = {
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
   reactExtensions: resolveApp('react-extensions.js'),
+  linariaCache: resolveApp('src/.linaria-cache'),
 };
 
 // @remove-on-eject-begin
@@ -113,12 +114,13 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  reactExtensions: resolveApp('react-extensions.js'),
+  linariaCache: resolveApp('src/.linaria-cache'),
   // These properties only exist before ejecting:
   ownPath: resolveOwn('.'),
   ownNodeModules: resolveOwn('node_modules'), // This is empty on npm 3
   appTypeDeclarations: resolveApp('src/react-app-env.d.ts'),
   ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
-  reactExtensions: resolveApp('react-extensions.js'),
 };
 
 const ownPackageJson = require('../package.json');
@@ -148,12 +150,13 @@ if (
     appNodeModules: resolveOwn('node_modules'),
     publicUrl: getPublicUrl(resolveOwn('package.json')),
     servedPath: getServedPath(resolveOwn('package.json')),
+    reactExtensions: resolveApp('react-extensions.js'),
+    linariaCache: resolveApp('src/.linaria-cache'),
     // These properties only exist before ejecting:
     ownPath: resolveOwn('.'),
     ownNodeModules: resolveOwn('node_modules'),
     appTypeDeclarations: resolveOwn('template/src/react-app-env.d.ts'),
     ownTypeDeclarations: resolveOwn('lib/react-app.d.ts'),
-    reactExtensions: resolveApp('react-extensions.js'),
   };
 }
 // @remove-on-eject-end
