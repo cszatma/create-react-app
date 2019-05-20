@@ -1,12 +1,8 @@
 {
-  "name": "react-scripts",
-  "version": "3.3.0",
+  "name": "@cszatma/react-scripts",
+  "version": "3.0.0",
   "description": "Configuration and scripts for Create React App.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/facebook/create-react-app.git",
-    "directory": "packages/react-scripts"
-  },
+  "repository": "cszatma/create-react-app",
   "license": "MIT",
   "engines": {
     "node": ">=8.10"
