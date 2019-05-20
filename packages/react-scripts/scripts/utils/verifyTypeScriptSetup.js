@@ -128,7 +128,17 @@ function verifyTypeScriptSetup() {
       parsedValue: ts.JsxEmit.React,
       suggested: 'react',
     },
-    paths: { value: undefined, reason: 'aliased imports are not supported' },
+    paths: {
+      suggested: {
+        '*': ['types/*'],
+        '@/*': ['./*'],
+        '@assets/*': ['assets/*'],
+        '@components/*': ['components/*'],
+        '@fonts/*': ['fonts/*'],
+        '@styles/*': ['styles/*'],
+        '@utils/*': ['utils/*'],
+      },
+    },
   };
 
   const formatDiagnosticHost = {

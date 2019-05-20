@@ -106,6 +106,18 @@ function getJestAliases(options = {}) {
   }
 }
 
+function getAliases(basePath, aliasPaths) {
+  const aliases = {};
+  const resolvePath = dirname => path.resolve(basePath, dirname);
+  const stripEnding = str => (str.endsWith('/*') ? str.slice(0, -2) : str);
+
+  for (let alias of Object.keys(aliasPaths)) {
+    aliases[stripEnding(alias)] = resolvePath(stripEnding(aliasPaths[alias]));
+  }
+
+  return aliases;
+}
+
 function getModules() {
   // Check if TypeScript is setup
   const hasTsConfig = fs.existsSync(paths.appTsConfig);
@@ -137,12 +149,17 @@ function getModules() {
   const options = config.compilerOptions || {};
 
   const additionalModulePaths = getAdditionalModulePaths(options);
+  const aliases =
+    additionalModulePaths && additionalModulePaths[0] === paths.appSrc
+      ? getAliases(paths.appSrc, config.paths)
+      : {};
 
   return {
     additionalModulePaths: additionalModulePaths,
     webpackAliases: getWebpackAliases(options),
     jestAliases: getJestAliases(options),
     hasTsConfig,
+    aliases,
   };
 }
 
