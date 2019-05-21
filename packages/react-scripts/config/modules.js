@@ -112,6 +112,10 @@ function getAliases(basePath, aliasPaths) {
   const stripEnding = str => (str.endsWith('/*') ? str.slice(0, -2) : str);
 
   for (let alias of Object.keys(aliasPaths)) {
+    if (alias === '*') {
+      continue;
+    }
+
     aliases[stripEnding(alias)] = resolvePath(
       stripEnding(aliasPaths[alias][0])
     );
