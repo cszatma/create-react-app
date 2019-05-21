@@ -128,6 +128,7 @@ function verifyTypeScriptSetup() {
       parsedValue: ts.JsxEmit.React,
       suggested: 'react',
     },
+    baseUrl: { suggested: 'src' },
     paths: {
       suggested: {
         '*': ['types/*'],

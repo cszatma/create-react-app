@@ -112,7 +112,9 @@ function getAliases(basePath, aliasPaths) {
   const stripEnding = str => (str.endsWith('/*') ? str.slice(0, -2) : str);
 
   for (let alias of Object.keys(aliasPaths)) {
-    aliases[stripEnding(alias)] = resolvePath(stripEnding(aliasPaths[alias]));
+    aliases[stripEnding(alias)] = resolvePath(
+      stripEnding(aliasPaths[alias][0])
+    );
   }
 
   return aliases;
@@ -151,7 +153,7 @@ function getModules() {
   const additionalModulePaths = getAdditionalModulePaths(options);
   const aliases =
     additionalModulePaths && additionalModulePaths[0] === paths.appSrc
-      ? getAliases(paths.appSrc, config.paths)
+      ? getAliases(paths.appSrc, options.paths)
       : {};
 
   return {
